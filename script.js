@@ -2,7 +2,7 @@
 
 //! Статистика массива
 
-const arr = [1, 2, 3, 44, 5, 66, 189, 0, 12, 151, 9];
+/* const arr = [1, 2, 3, 44, 5, 66, 189, 0, 12, 151, 9];
 
 const Sort = () => {
     let sum = 0;
@@ -23,12 +23,11 @@ const Sort = () => {
         console.log('MAX', max);
         console.log('MIN', min);
 };
-Sort();
-
+Sort(); */
 
 //! Замена двух элементов
 
-const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+/* const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 const ChangeElems = () => {
     for (let i = 0; i < letters.length; i+=2) {
@@ -36,10 +35,7 @@ const ChangeElems = () => {
         console.log(letters);
     }
 };
-
-ChangeElems();
-
-
+ChangeElems(); */
 
 //! Замена цвета на странице
 
@@ -89,10 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
 //! Определение простое числа
 
-function isNaturalNumber(number) {
+/* function isNaturalNumber(number) {
     const sqrt = Math.sqrt(number);
     for (let i = 2; i <= sqrt ; i++) {
         if (number % i === 0) {
@@ -101,6 +96,47 @@ function isNaturalNumber(number) {
     }
 return number > 1;
 }
+console.log(isNaturalNumber(997)); */
 
-console.log(isNaturalNumber(997));
+//! Методы массивов
 
+//* some
+const someNum = [3, 44, 6, 90, 18, 1, 2];
+
+let b = someNum.some(item => {
+    if (item < 2) {
+        return true;
+    }
+});
+console.log(b);
+
+
+
+//* every
+
+const everyNum = [8, 9, 11, 13, 18, 41];
+
+let a = everyNum.every(item => {
+    if (item < 41) {
+        return true;
+    }
+});
+console.log(a);
+
+
+//* find
+
+
+
+
+//* findIndex
+
+
+
+
+//* includes
+
+
+
+
+//* indexOf
