@@ -103,30 +103,67 @@ console.log(isNaturalNumber(997)); */
 //* some
 const someNum = [3, 44, 6, 90, 18, 1, 2];
 
-let b = someNum.some(item => {
+const mySomeCallback = (item) => {
     if (item < 2) {
         return true;
     }
-});
+};
+
+let b = someNum.some(mySomeCallback);
 console.log(b);
 
 
+const mySome = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (callbackFn(arr[index], index, arr)) {
+            return true;
+        }
+    } return false;
+};
+
+console.log(mySome(someNum, mySomeCallback));;
 
 //* every
 
 const everyNum = [8, 9, 11, 13, 18, 41];
 
-let a = everyNum.every(item => {
+const myEveryCallback = (item) => {
     if (item < 41) {
         return true;
     }
-});
+};
+
+let a = everyNum.every(myEveryCallback);
 console.log(a);
+
+const myEvery = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (!callbackFn(arr[index], index, arr)) {
+            return false;
+        }
+    } return true;
+};
 
 
 //* find
 
+const findNum = [8, 9, 11, 13, 18, 41];
 
+const myFindCallback = (item) => {
+    return item > 142;
+};
+
+let c = findNum.find(myFindCallback);
+console.log(c);
+
+const myFind = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (callbackFn(arr[index], index, arr)) {
+            return arr[index];
+        }
+    }
+};
+console.log(myFind(findNum, myFindCallback));
 
 
 //* findIndex
