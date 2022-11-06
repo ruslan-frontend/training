@@ -100,8 +100,8 @@ console.log(isNaturalNumber(997)); */
 
 //! Методы массивов
 
-//* some
-const someNum = [3, 44, 6, 90, 18, 1, 2];
+//! some
+const array = [3, 44, 6, 90, 18, 1, 2, 8, 9, 11, 13, 18, 41];
 
 const mySomeCallback = (item) => {
     if (item < 2) {
@@ -109,9 +109,7 @@ const mySomeCallback = (item) => {
     }
 };
 
-let b = someNum.some(mySomeCallback);
-console.log(b);
-
+let a = array.some(mySomeCallback);
 
 const mySome = (arr, callbackFn) => {
     for (let index = 0; index < arr.length; index++) {
@@ -120,21 +118,16 @@ const mySome = (arr, callbackFn) => {
         }
     } return false;
 };
+console.log('SOME:', mySome(array, mySomeCallback));
 
-console.log(mySome(someNum, mySomeCallback));;
-
-//* every
-
-const everyNum = [8, 9, 11, 13, 18, 41];
-
+//! every
 const myEveryCallback = (item) => {
     if (item < 41) {
         return true;
     }
 };
 
-let a = everyNum.every(myEveryCallback);
-console.log(a);
+let b = array.every(myEveryCallback);
 
 const myEvery = (arr, callbackFn) => {
     for (let index = 0; index < arr.length; index++) {
@@ -143,18 +136,14 @@ const myEvery = (arr, callbackFn) => {
         }
     } return true;
 };
+console.log('EVERY:', myEvery(array, myEveryCallback));
 
-
-//* find
-
-const findNum = [8, 9, 11, 13, 18, 41];
-
+//! find
 const myFindCallback = (item) => {
-    return item > 142;
+    return item > 23;
 };
 
-let c = findNum.find(myFindCallback);
-console.log(c);
+let c = array.find(myFindCallback);
 
 const myFind = (arr, callbackFn) => {
     for (let index = 0; index < arr.length; index++) {
@@ -163,17 +152,97 @@ const myFind = (arr, callbackFn) => {
         }
     }
 };
-console.log(myFind(findNum, myFindCallback));
+console.log('FIND:', myFind(array, myFindCallback));
 
 
-//* findIndex
+//! findIndex
+const myFindIndexCallback = (item) => {
+    return item === 13;
+};
+
+let d = array.findIndex(myFindIndexCallback);
+
+const myFindIndex = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (callbackFn(arr[index], index, arr)) {
+            return index;
+        }
+    }
+};
+console.log('FIND INDEX:', myFindIndex(array, myFindIndexCallback));
+
+//! includes
+const myIncludesCallback = (item) => {
+    return item > 12;
+};
+
+let e = array.includes(myIncludesCallback);
+
+const myIncludes = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (callbackFn(arr[index], index, arr)) {
+            return true;
+        }
+    } return false;
+};
+console.log('INCLUDES:', myIncludes(array, myIncludesCallback));
+
+//! indexOf ???
+const myIndexOfCallback = (item) => {
+    return item === 12;
+};
+
+let f = array.includes(myIndexOfCallback);
+
+const myIndexOf = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        if (callbackFn(arr[index], index, arr)) {
+            return index;
+        }
+    }
+};
+console.log('INDEX OF:', myIndexOf(array, myIndexOfCallback));
+
+//! splice arr.splice (fromIndex, itemsToDelete, item1ToAdd, item2ToAdd, ...)
+const nextArray = [3, 44, 6, 90, 18, 1, 2, 8, 9, 11, 13, 18, 41];
+
+const mySpliceOfCallback = (item) => {
+    return item === 12;
+};
+
+let g = nextArray.splice(myIndexOfCallback);
+
+const mySplice = (arr, callbackFn) => {
+
+};
+
+
+//! slice
 
 
 
 
-//* includes
+//! reverse
 
 
 
 
-//* indexOf
+//! forEach
+
+
+
+
+//! map
+
+
+
+
+//! filter
+
+
+
+
+//! reduce
+
+
+
