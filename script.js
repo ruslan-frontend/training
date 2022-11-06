@@ -189,7 +189,7 @@ console.log('INCLUDES:', myIncludes(array, myIncludesCallback));
 
 //! indexOf ???
 const myIndexOfCallback = (item) => {
-    return item === 12;
+    return item === 8;
 };
 
 let f = array.includes(myIndexOfCallback);
@@ -204,33 +204,44 @@ const myIndexOf = (arr, callbackFn) => {
 console.log('INDEX OF:', myIndexOf(array, myIndexOfCallback));
 
 //! splice arr.splice (fromIndex, itemsToDelete, item1ToAdd, item2ToAdd, ...)
-const nextArray = [3, 44, 6, 90, 18, 1, 2, 8, 9, 11, 13, 18, 41];
+const spliceArray = [3, 44, 6, 90, 18, 1, 2, 8, 9, 11, 13, 18, 41];
 
-const mySpliceOfCallback = (item) => {
-    return item === 12;
+let g = spliceArray.splice(2, 10, 'hello');
+
+const mySplice = (arr, start, remove, add) => {
+    for (let index = start; index < start + remove; index++) {
+        
+    }
+    
 };
+console.log('SPLICE:', mySplice(spliceArray, 2, 10, 'hello'));
 
-let g = nextArray.splice(myIndexOfCallback);
+//! slice заменяет массив
+const sliceArray = [3, 44, 6, 90, 18, 1, 2, 8, 9, 11, 13, 18, 41];
 
-const mySplice = (arr, callbackFn) => {
-
-};
-
-
-//! slice
-
-
-
+let slicedArray = sliceArray.slice(2, 7);
+console.log(slicedArray);
 
 //! reverse
 
 
 
 
-//! forEach
+//! forEach (callback)
+const forEach = ["Яблоко", "Апельсин", "Груша"];
 
+const myForEachCallback = (item, i, arr) => {
+    console.log(( i + ": " + item + " (массив:" + arr + ")" ));
+};
 
+// forEach.forEach(myForEachCallback);
 
+const myForEach = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        callbackFn(arr[index], index, arr);
+    }
+};
+myForEach(forEach, myForEachCallback);
 
 //! map
 
@@ -238,9 +249,45 @@ const mySplice = (arr, callbackFn) => {
 
 
 //! filter
+const filterArray = [
+        {name: 'Ульяна',
+        lastname: 'Иванова'
+    },
+        {name: 'Вера',
+        lastname: 'Петрова'
+    },
+        {name: 'Арсений',
+        lastname: 'Марков'
+    },
+        {name: 'София',
+        lastname: 'Карташова'
+    },
+        {name: 'Илья',
+        lastname: 'Демидов'   
+    },
+        {name: 'София',
+        lastname: 'Волкова'
+    },
+        {name: 'Вера',
+        lastname: 'Шарова'
+    },
+];
 
+const myFilterCallback = (item) => {
+    return item.name == 'Вера';
+};
 
+let newFilterArray = filterArray.filter(myFilterCallback);
+// console.log(newFilterArray);
 
+const newArray = [];
+
+const myFilter = (arr, callbackFn) => {
+    for (let index = 0; index < arr.length; index++) {
+        callbackFn(arr[index], index, arr);
+    }   return newArray;
+};
+console.log('FILTER:', myFilter(newArray, myFilterCallback));
 
 //! reduce
 

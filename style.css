@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: red;
+    background: Beige;
 }
 
 .main {
@@ -27,7 +27,7 @@ body {
 
 .title-colorName {
     text-transform: capitalize;
-    color: red;
+    color: Beige;
 }
 
 
