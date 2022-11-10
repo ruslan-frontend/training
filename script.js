@@ -305,3 +305,40 @@ const myMap = (arr, callbackFn) => {
 };
 console.log('MAP:', myMap(filterArray, myMapCallback));
 
+//! prototype и __proto__
+
+console.log( ({}).prototype === ({}).__proto__);
+// false
+
+function ITKamasutra() {}
+console.log( ITKamasutra.prototype === ITKamasutra.__proto__);
+//false
+
+function ITIncubator() {}
+function ITKamasutra1() {}
+console.log( ITIncubator.__proto__ === ITKamasutra1.__proto__);
+// true
+console.log( ITIncubator.prototype === ITKamasutra1.prototype);
+// true
+
+let Component = (props) => {
+    return `<div> I don't know Prototypes</div>`;
+};
+console.log(Component.prototype === Object.prototype);
+
+
+let age = 18;
+console.log(age.prototype === Number.prototype);
+console.log(age.__proto__ === Number.prototype);
+
+
+class Hacker {}
+console.log(Hacker.__proto__ === Function.prototype);
+
+
+function ITIncubator1() {};
+console.log( ITIncubator1.__proto__);
+
+
+const count8 = 12;
+console.log(count8.__proto__);
